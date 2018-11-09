@@ -90,7 +90,12 @@ public class Heap {
 
 		//left child = 2i+1, right child = 2i+2;
 		// parent = child-1/2 , where child = index of child
+
 		minHeap.add(in);
+		if (minHeap.size()<=1){
+			// only root node in rn.
+			return;
+		}
 		int index_In = minHeap.size()-2; //child index -1
 		int parent = index_In/2;
 		while(minHeap.get(parent)!=null) {

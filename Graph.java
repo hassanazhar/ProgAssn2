@@ -76,7 +76,7 @@ public class Graph {
 ///////////////////////////////////////////////////////////////////////////////
 
   public Heap getHeap() {
-    return minHeap;
+	    return minHeap;
   }
     
   public ArrayList<Node> getAllNodes(){

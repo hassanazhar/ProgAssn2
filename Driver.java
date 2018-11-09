@@ -102,6 +102,19 @@ public class Driver {
 
 		if (testHeap) {
 			//push stuff in heap, check that all parents are less than kids.
+			Heap minHeap = new Heap();
+			System.out.println("HELLO");
+			Node x = new Node(0);
+			Node y = new Node(5);
+			Node z = new Node (2);
+			x.setMinDistance(10);
+			y.setMinDistance(3);
+			z.setMinDistance(3);
+			minHeap.insertNode(x);
+			minHeap.insertNode(y);
+			minHeap.insertNode(z);
+			System.out.println(minHeap);
+			// original
 			System.out.println(testGraph.getHeap());
 		}
 	}
