@@ -101,6 +101,7 @@ public class Driver {
 		}
 
 		if (testHeap) {
+			//push stuff in heap, check that all parents are less than kids.
 			System.out.println(testGraph.getHeap());
 		}
 	}
