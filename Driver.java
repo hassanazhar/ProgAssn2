@@ -94,12 +94,36 @@ public class Driver {
 		
 		testGraph.setAllNodesArray(allNodeNames);
 	}
+
 	
   public static void testRun() {
-		if (testDijkstra) {
-			System.out.println(testGraph);
-		}
+		/*if (testDijkstra) {
+			Node root = testGraph.getAllNodes().get(0);
+			root.setMinDistance(0);
+			ArrayList<Node> temp = testGraph.findEveryShortestPathLength(root);
+			//System.out.println(testGraph);
+			System.out.println(testGraph.getHeap());
+		}*/
+		if(testDijkstra){
+			ArrayList<Node> temp;
+			for (int i = 0; i < testGraph.getAllNodes().size(); i++) {
+				System.out.print("FOR NODE " + i + " : ");
+				for (int j = 0; j < testGraph.getAllNodes().size(); j++) {
+					System.out.print("TO NODE " + j + " //// ");
+					temp = testGraph.findAShortestPath(testGraph.getAllNodes().get(i), testGraph.getAllNodes().get(j));
+					if (temp != null) {
+						for (Node node : temp) {
+							System.out.print(node.getNodeName() + " ");
 
+						}
+						System.out.print(": " + testGraph.findShortestPathLength(testGraph.getAllNodes().get(i),
+								testGraph.getAllNodes().get(j)));
+					}
+					System.out.println("");
+				}
+				System.out.println("");
+			}
+		}
 		if (testHeap) {
 			//push stuff in heap, check that all parents are less than kids.
 			Heap minHeap = new Heap();
@@ -115,6 +139,7 @@ public class Driver {
 			minHeap.insertNode(z);
 			System.out.println(minHeap);
 			// original
+
 			System.out.println(testGraph.getHeap());
 		}
 	}
